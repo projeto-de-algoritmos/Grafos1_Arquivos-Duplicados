@@ -7,4 +7,4 @@ diretorio = utilitarios.uso()
 utilitarios.mapearDiretorio(diretorio)
 
 #utilitarios.mostrarArquivosMapeados()
-utilitarios.mostrarDiretoriosMapeados()
+#utilitarios.mostrarDiretoriosMapeados()

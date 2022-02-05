@@ -8,13 +8,13 @@ class Utilitarios:
         self.diretoriosMapeados = []
 
     def uso(self):
-        try:   
-            return str(argv[1])  
-        except IndexError:  
+        if len(argv) > 1:
+            return argv[1]
+        else:
             print('''
                 \tUso : {} [DIRETORIO]
                 \t Se a pasta tiver espaço no nome , digite: {} "[DIRETORIO COM ESPAÇO]" 
-            '''.format(argv[0]))
+            '''.format(argv[0],argv[0]))
             exit()
 
     def mapearDiretorio(self,diretorioRaiz):
