@@ -1,5 +1,8 @@
 from os import listdir,path,getcwd
 from sys import argv,exit
+from unicodedata import name
+
+from grafos import GrafoDirecionado, Path
 
 class Utilitarios:
 
@@ -8,31 +11,44 @@ class Utilitarios:
         self.diretoriosMapeados = []
 
     def uso(self):
-        try:   
+        try:
             return str(argv[1])  
-        except IndexError:  
+        except IndexError:
             print('''
-                \tUso : {} [DIRETORIO]
-                \t Se a pasta tiver espaço no nome , digite: {} "[DIRETORIO COM ESPAÇO]" 
-            '''.format(argv[0]))
+            Para correta utilização do programa, passe algum diretório como argumento:
+            python {} [DIRETORIO]
+
+            Em ocasiões em que o nome do diretório tenha espaço utilize "":
+            python {} "pasta com espaco"
+            '''.format(argv[0], argv[0]))  
             exit()
 
-    def mapearDiretorio(self,diretorioRaiz):
+    def mapearDiretorio(self,diretorioRaiz, grafo: GrafoDirecionado):
         try:
             diretorioRaizObj = listdir(diretorioRaiz)
         except:
             print('Erro na leitura do diretorio {}'.format(diretorioRaiz))
-            pass
+            exit()
 
+        novaPasta = Path(name=diretorioRaiz)
+        diretoriosMapeados = []
+        caminhosMapeados = []
         for dado in diretorioRaizObj :
-            #diretorioCorrente = getcwd()
-            #print(dado if path.isfile(path.join(diretorioRaiz,dado)) else '{}/'.format(dado))
-            
             caminhoCompleto = path.join(diretorioRaiz,dado)
             if path.isdir(caminhoCompleto):
                 self.diretoriosMapeados.append(caminhoCompleto)
+                caminhosMapeados.append(caminhoCompleto)
+                diretoriosMapeados.append(dado)
             else:
+                novaPasta.files.append(dado)
                 self.arquivosMapeados[dado] = caminhoCompleto
+
+        grafo.inserirVertice(novaPasta)
+        for subpasta in caminhosMapeados:
+            self.mapearDiretorio(subpasta, grafo)
+            grafo.inserirAresta(novaPasta.name, subpasta)
+
+        
     
     def mostrarArquivosMapeados(self):
         for diretorio in self.arquivosMapeados :
@@ -41,7 +57,3 @@ class Utilitarios:
     def mostrarDiretoriosMapeados(self):
         for a in range(len(self.diretoriosMapeados)):
             print(self.diretoriosMapeados[a])
-
-'''for a in range(len(self.diretoriosMapeados)):
-            self.mapearDiretorio('{}'.format(self.diretoriosMapeados[a]))
-        return'''
