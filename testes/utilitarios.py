@@ -9,10 +9,12 @@ class Utilitarios:
     def __init__(self):
         self.arquivosMapeados = {}
         self.diretoriosMapeados = []
+        self.diretorioRaiz = ""
 
     def uso(self):
         try:
-            return str(argv[1])  
+            self.diretorioRaiz = str(argv[1])
+            return self.diretorioRaiz  
         except IndexError:
             print('''
             Para correta utilização do programa, passe algum diretório como argumento:
@@ -48,7 +50,10 @@ class Utilitarios:
             self.mapearDiretorio(subpasta, grafo)
             grafo.inserirAresta(novaPasta.name, subpasta)
 
-        
+    
+    def comparaArquivos(self, grafo: GrafoDirecionado):
+        for pasta in grafo.grafo:
+            grafo.bfs(pasta, self.diretorioRaiz)
     
     def mostrarArquivosMapeados(self):
         for diretorio in self.arquivosMapeados :

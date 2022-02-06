@@ -10,13 +10,6 @@ path2 = Path("pastas")
 
 diretorio = utilitarios.uso()
 utilitarios.mapearDiretorio(diretorio, grafo)
-print(grafo.grafo)
-print(grafo.dictAuxiliar)
-
-# Mostra os arquivos de cada pasta
-for key in list(grafo.grafo.keys()):
-    print(grafo.dictAuxiliar[key].files)
-
-
-#utilitarios.mostrarArquivosMapeados()
-#utilitarios.mostrarDiretoriosMapeados()
+utilitarios.comparaArquivos(grafo)
+if (grafo.arquivosIdenticos == 0):
+    print("Nenhum arquivo idêntico a partir deste diretório!")
