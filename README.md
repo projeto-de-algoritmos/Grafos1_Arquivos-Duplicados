@@ -17,9 +17,9 @@ Adicione 3 ou mais screenshots do projeto em funcionamento.
 
 ## Instalação 
 **Linguagem**: Python<br>
-**Framework**: (caso exista)<br>
+**Framework**: <br>
 
-Para a execução do utilitário basta digitar : ````
+Para a execução do utilitário basta digitar : ```
 python[3] scandir.py
 ```
 
