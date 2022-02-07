@@ -19,7 +19,9 @@ Adicione 3 ou mais screenshots do projeto em funcionamento.
 **Linguagem**: Python<br>
 **Framework**: <br>
 
-Para a execução do utilitário basta digitar : ```
+Para a execução do utilitário basta digitar :
+
+```
 python[3] scandir.py
 ```
 
