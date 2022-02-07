@@ -34,10 +34,6 @@ class GrafoDirecionado:
 			print(v2,' não existe no grafo - V2')
 		else:
 			self.grafo[v1].append(v2)
-			
-	def mostrarGrafo(self):
-		for a in self.grafo:
-			print(a,self.grafo[a])
 
 	def verificaConteudoArquivos(self, arquivo1, pasta1, arquivo2, pasta2):
 		caminho1 = path.join(pasta1.name, arquivo1)
@@ -50,7 +46,7 @@ class GrafoDirecionado:
 			if file1_line != file2_line:
 				return
 		self.arquivosIdenticos = self.arquivosIdenticos + 1
-		print("Arquivos idênticos: {} e {}".format(caminho1, caminho2))
+		print("Arquivos idênticos: {} e {}\n".format(caminho1, caminho2))
 
 	def comparaArquivosOutroDiretorio(self, pasta: str, pastaComparar:Path):
 		for file in pastaComparar.files:
