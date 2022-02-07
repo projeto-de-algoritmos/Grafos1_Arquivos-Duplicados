@@ -22,7 +22,7 @@ Adicione 3 ou mais screenshots do projeto em funcionamento.
 Para a execução do utilitário basta digitar :
 
 ```
-python[3] scandir.py
+python[3] scandir.py [diretorio]
 ```
 
 ## Uso 
