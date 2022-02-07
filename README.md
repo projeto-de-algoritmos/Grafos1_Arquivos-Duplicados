@@ -7,7 +7,7 @@
 |Matrícula | Aluno |
 | -- | -- |
 | 19/0020903  |  Vitor Magalhães Lamego |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
+| 18/0011472  |  Rodolfo Cabral Neves |
 
 ## Sobre 
 O projeto em questão irá fazer um mapeamento dos diretórios do usuário que estiver rodando o script e basicamente percorrerá os diretórios comparando os arquivos para avisar se existem arquivos duplicados ou não no computador do usuário.
@@ -16,12 +16,15 @@ O projeto em questão irá fazer um mapeamento dos diretórios do usuário que e
 Adicione 3 ou mais screenshots do projeto em funcionamento.
 
 ## Instalação 
-**Linguagem**: xxxxxx<br>
+**Linguagem**: Python<br>
 **Framework**: (caso exista)<br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
+
+Para a execução do utilitário basta digitar : ````
+python[3] scandir.py
+```
 
 ## Uso 
-Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
+O programa **deverá** ser capaz de perguntar ao usuário quais dos arquivos deseja manter.
 
 ## Outros 
 Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
