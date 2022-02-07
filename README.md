@@ -26,7 +26,7 @@ python[3] scandir.py
 ```
 
 ## Uso 
-Após o mapeamento do diretório raiz e seus respetivos subdiretórios, se tiver arquivos duplicados em diferentes diretórios programa **deverá** ser capaz de perguntar ao usuário quais dos arquivos deseja manter.
+Após o mapeamento do diretório raiz e seus respetivos subdiretórios, se tiver arquivos duplicados em diferentes diretórios programa **deverá** apresentar os arquivos similares.
 
 ## Outros 
 Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
